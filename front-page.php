@@ -1,11 +1,21 @@
 <?php get_header(); ?>
-<p>sztos</p>
+
+<div class="row">
+    <?php if(have_posts()){ ?>
+    <article class="col-12">
+        <?php// the_post(); ?>
+        <h1><?php //the_tlte(); ?></h1>
+    </article>
+    <?php } ?>
 <?php
 
 while(have_posts()){
+
 	the_post();
-	get_template_part('partials/content');
+
+	get_template_part('partials/content','front');
 }
 
 ?>
 <?php get_footer(); ?>
+</div>
