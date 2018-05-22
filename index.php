@@ -1,7 +1,11 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: briko
- * Date: 22.05.2018
- * Time: 17:08
- */
+<?php get_header(); ?>
+<p>sztos</p>
+	<?php
+
+		while(have_posts()){
+			the_post();
+			get_template_part('partials/content');
+		}
+
+	?>
+<?php get_footer(); ?>
