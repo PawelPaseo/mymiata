@@ -1,19 +1,22 @@
 <?php get_header(); ?>
 
 <div class="row">
-    <?php if(have_posts()){ ?>
-    <article class="col-12">
-        <?php// the_post(); ?>
-        <h1><?php //the_tlte(); ?></h1>
-    </article>
-    <?php } ?>
 <?php
+
+$postIterator = 1;
 
 while(have_posts()){
 
-	the_post();
+	the_post();?>
+
+    <article class="col-<?php if($postIterator == 1){echo'12';} else {echo '6';} ?>"><?php
 
 	get_template_part('partials/content','front');
+
+	$postIterator++;
+	?>
+    </article><?php
+
 }
 
 ?>

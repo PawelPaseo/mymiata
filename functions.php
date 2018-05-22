@@ -17,3 +17,5 @@ function _set_offset_on_front_page(&$query) {  //Sets post offset for front page
 }
 
 add_action('pre_get_posts', 'set_offset_on_front_page');
+
+add_theme_support( 'post-thumbnails' );
